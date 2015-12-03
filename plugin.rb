@@ -1,9 +1,9 @@
-# name: low_voltage
+# name: Static Pages
 # about: Static pages for Discourse
 # version: 0.1
 # authors: Łukasz Niemier
 
-gem 'high_voltage', '2.3.0'
+gem 'high_voltage', '2.4.0'
 
 load File.expand_path('../lib/low_voltage.rb', __FILE__)
 
