@@ -5,39 +5,16 @@
     <title><%= content_for?(:title) ? yield(:title) + ' - ' + SiteSetting.title : SiteSetting.title %></title>
     <meta name="description" content="<%= @description_meta || SiteSetting.site_description %>">
     <%= render partial: "layouts/head" %>
-
-    <%= raw SiteText.text_for(:head) %>
-
+    <%= render partial: "common/special_font_face" %>
+    <%= render partial: "common/discourse_stylesheet" %>
     <%= render_google_universal_analytics_code %>
+    <%= script "ember_jquery" %>
 
     <%= yield :head %>
   </head>
 
   <body>
-    <!--[if IE 9]><script type="text/javascript">ie = "new";</script><![endif]-->
-
-    <%- unless customization_disabled? %>
-      <%= SiteCustomization.custom_header(session[:preview_style], mobile_view? ? :mobile : :desktop) %>
-    <%- end %>
-
-    <section id='main'>
-        <%= yield %>
-    </section>
-
-    <% unless current_user %>
-      <form id='hidden-login-form' method="post" action="<%=login_path%>" style="display: none;">
-        <input name="username" type="text"     id="signin_username">
-        <input name="password" type="password" id="signin_password">
-        <input name="redirect" type="hidden">
-        <input type="submit" id="signin-button" value="<%= t 'log_in' %>">
-      </form>
-    <% end %>
-
-    <%= yield :data %>
-
-    <footer id='bottom'><%= raw SiteText.text_for(:bottom) %></footer>
-
-    <%= render_google_analytics_code %>
+    <%= yield %>
   </body>
 </html>
 
