@@ -1,0 +1,125 @@
+    <!--[if IE 9]><script type="text/javascript">ie = "new";</script><![endif]-->
+    <%= render partial: 'header' %>
+    <!-- Static Header -->
+    <div id="top-navbar" class="container flexible">
+        <span id="top-navbar-links" style="height:20px;">
+        <a href="http://example.com">Discussions</a>
+        <a href="http://example.com/about/">Ask A Mentor</a>
+        <a href="http://example.com/news/">News/Bulletins</a>
+        <a href="/about">About</a>
+      </span>
+    </div>
+    <div class="clearfix">
+      <div id="first">
+        <div class="mentor-hero">
+          <img class="balloon-icon" src="/assets/balloon.png"></img>
+          <h1>Connect & Engage with JRF Scholars<br/>In Need of your mentorship.</h1>
+          <hr>
+          <a class="link-1" href="/mentor_link">Get Started ></a>
+
+        </div>
+      </div>
+      <div id="fourth">
+        <div class="topic-mentor-square topic-mentor-square-first">
+          <div class="topic-mentor-content">
+            <h2 class="topic-mentor-square-ask">Ask A Mentor</h2>
+            <div class="button-section"><button class="button-2">Education</button></div>
+            <p class="link-5"> A link to the posts tagged with the "Education category." This should be
+            <br/>replaced with actual content from the forums in order to match expectations.</p>
+            <span>
+              <img class="avatar" src="/assets/sarah_shaw.png"/>
+              <span class="link-2">Sarah Shaw</span><br/>
+              <span class="text-2">January 30, 2016</span>
+            </span>
+
+            <div class="button-section"><button class="button-2">Education</button></div>
+           <p class="link-5"> A link to the posts tagged with the "Education category." This should be
+            <br/>replaced with actual content from the forums in order to match expectations.</p>
+            <span>
+              <img class="avatar" src="/assets/john_smith.png"/>
+              <span class="link-2">John Smith</span><br/>
+              <span class="text-2">January 30, 2016</span>
+            </span>
+            <br/>
+            <div class="button-section"><button class="button-2">Education</button></div>
+            <p class="link-5"> A link to the posts tagged with the "Education category." This should be
+            <br/>replaced with actual content from the forums in order to match expectations.</p>
+            <span>
+              <img class="avatar" src="/assets/jane_doe.png"/>
+              <span class="link-2">Jane Doe Smith</span><br/>
+              <span class="text-2">January 30, 2016</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="topic-mentor-square">
+          <div class="topic-mentor-content">
+            <h2 class="topic-mentor-square-news">News/Bulletins</h2>
+             <div class="button-section"><button class="button-jrf">JRF News</button></div>
+
+            <p class="link-5"> A link to the posts tagged with the "Politics category." This should be<br/>
+            replaced with actual content from the forums in order to match expectations.<br/></p>
+            <span>
+              <img class="avatar" src="/assets/ivo_philbert.png"/>
+              <span class="link-2">Ivo Philbert</span><br/>
+              <span class="text-2">January 30, 2016</span>
+            </span>
+
+             <div class="button-section"><button class="button-jrf">JRF News</button></div>
+
+           <p class="link-5"> A link to the posts tagged with the "Politics category." This should be<br/>
+            replaced with actual content from the forums in order to match expectations.<br/></p>
+            <span>
+              <img class="avatar" src="/assets/jane_smith.png"/>
+              <span class="link-2">Jane Smith</span><br/>
+              <span class="text-2">January 30, 2016</span>
+            </span>
+
+             <div class="button-section"><button class="button-jrf">JRF News</button></div>
+
+            <p class="link-5"> A link to the posts tagged with the "Politics category." This should be<br/>
+            replaced with actual content from the forums in order to match expectations.<br/></p>
+            <span>
+              <img class="avatar" src="/assets/mauri_robinson.png"/>
+              <span class="link-2">Mauri Robinson</span><br/>
+              <span class="text-2">January 30, 2016</span>
+            </span>
+          </div>
+        </div>
+
+      </div>
+      <div id="fifth">
+        <div class="need-help">
+          <h2>Need help getting started?</h2>
+           <p class="text-1"> A link to the posts tagged with the "Politics category." This should be<br/>
+            replaced with actual content from the forums in order to match expectations.</p>
+            <div class="how-it-works">
+              <a href="/discussions"><button class="button-3">How It Works</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% unless current_user %>
+      <form id='hidden-login-form' method="post" action="<%=login_path%>" style="display: none;">
+        <input name="username" type="text"     id="signin_username">
+        <input name="password" type="password" id="signin_password">
+        <input name="redirect" type="hidden">
+        <input type="submit" id="signin-button" value="<%= t 'log_in' %>">
+      </form>
+    <% end %>
+
+    <%= yield :data %>
+
+    <div id="sticky-footer">
+      <span id="footer-links">
+        <a href="http://example.com">Contact Us</a>
+        <a href="http://example.com/about/">Privacy Policy</a>
+        <a href="http://example.com/news/">Terms of Use</a>
+        <a href="/about">Foundation Site</a>
+      </span>
+      <span id="copyright">
+        <p>Copyright &copy; 2016 The Jackie Robinson Foundation. All rights reserved.</p>
+      </span>
+    </div>
+
+    <%= render_google_analytics_code %>
